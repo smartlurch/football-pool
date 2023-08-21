@@ -22,6 +22,16 @@ def main():
     print("Away Team:")
     print(pool_numbersB)
 
+    #pull in football schedule csv - columns are: date,home,away
+
+    #loop over each row
+        #generate numbers for away
+        #generate numbers for home
+        #clone pool template csv
+        #insert numbers generated
+        #save to new csv main-team-name-date.csv
+
+
 if __name__ == "__main__":
     main()
 
