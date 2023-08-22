@@ -14,13 +14,6 @@ def main():
     min_number = 0
     max_number = 9
 
-
-    print("Home Team:")
-    print(pool_numbersA)
-
-    print("Away Team:")
-    print(pool_numbersB)
-
     #pull in football schedule csv - columns are: date,home,away
     with open("schedule.csv") as schedule_file:
         schedule_list = csv.reader(schedule_file, delimiter=',')
@@ -37,8 +30,11 @@ def main():
             #clone pool template csv
             #insert numbers generated
             #save to new csv main-team-name-date.csv
-
-
+            print(date)
+            print(home)
+            print(away)
+            print("away numbers:")
+            print(', '.join(map(str,away_numbers)))
 if __name__ == "__main__":
     main()
 
