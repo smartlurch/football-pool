@@ -30,11 +30,16 @@ def main():
             #clone pool template csv
             #insert numbers generated
             #save to new csv main-team-name-date.csv
-            print(date)
-            print(home)
-            print(away)
-            print("away numbers:")
+            print(date + ": " + home + " vs " + away)
+            #print(home)
+            #print(away)
+            print(home + " numbers:")
+            print(', '.join(map(str,home_numbers)))
+            print(away + " numbers:")
             print(', '.join(map(str,away_numbers)))
+            home_nums_merged = 
+            line = date + "," + home + "," + home_nums_merged + "," + away + "," + away_nums_merged
+
 if __name__ == "__main__":
     main()
 
