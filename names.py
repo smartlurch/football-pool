@@ -10,23 +10,15 @@ def generate_football_pool_numbers(num_numbers, min_number, max_number):
     return numbers
 
 def main():
-    num_numbers = 10 
+    num_numbers = 100 
     min_number = 0
-    max_number = 9
+    max_number = 99
 
     #pull in football schedule csv - columns are: date,home,away
-    with open("schedule.csv") as schedule_file:
-        schedule_list = csv.reader(schedule_file, delimiter=',')
-        #loop over each row
-        for row in schedule_list:
-            date = row[0]
-            home = row[1]
-            away = row[2]
             
             #generate numbers for home
-            home_numbers = generate_football_pool_numbers(num_numbers, min_number, max_number)
+    name_numbers = generate_football_pool_numbers(num_numbers, min_number, max_number)
             #generate numbers for away
-            away_numbers = generate_football_pool_numbers(num_numbers, min_number, max_number)
             #clone pool template csv
             #insert numbers generated
             #save to new csv main-team-name-date.csv
@@ -37,14 +29,10 @@ def main():
   #          print(', '.join(map(str,home_numbers)))
    #         print(away + " numbers:")
     #        print(', '.join(map(str,away_numbers)))
-            home_nums_merged = ", ".join(map(str,home_numbers)) 
-            away_nums_merged = ", ".join(map(str,away_numbers))
-            line = date + ", " + home + ", " + home_nums_merged + ", " + away + ", " + away_nums_merged
-            print(line)
-            scoresFile = open("scores.csv", "a")
-            scoresFile.writelines(line)
-            scoresFile.writelines(" \n")
-            scoresFile.close()
+    name_nums_merged = "\n".join(map(str,name_numbers)) 
+    scoresFile = open("names.csv", "a")
+    scoresFile.writelines(name_nums_merged)
+    scoresFile.close()
 if __name__ == "__main__":
     main()
 
